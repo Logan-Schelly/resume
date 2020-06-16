@@ -1,0 +1,132 @@
+\documentclass{resume}
+\usepackage[utf8]{inputenc}
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+
+\usepackage[colorlinks, urlcolor=blue]{hyperref}%Gotta have them weblinks.
+
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{anyfontsize}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage{vwcol}
+\setlength{\multicolsep}{0pt}
+\usepackage{scrextend}
+
+\title{R\'esum\'e 2019}
+\author{Logan Schelly}
+\date{September 2019}
+
+\name{Logan Schelly}
+\address{(951)\phantom{-}692-8802 \\ \href{mailto:idyllogan@verizon.net}{idyllogan@verizon.net}}
+\address{\href{https://www.linkedin.com/in/logan-schelly/}{linkedin.com/in/logan-schelly/}}
+
+\begin{document}
+
+\begin{rSection}{Education}
+    \begin{rSubsection}
+    {B.S. in Mathematics}{April 2020}{Brigham Young University (BYU)}{}
+    \vspace{2pt}
+        \item \textbf{Applied and Computational Mathematics Emphasis (ACME)}
+            \begin{itemize}[label = \vspace{0ex}, itemsep = -5pt, topsep=-3pt]
+                \item Coded in Python for all 4 lab classes, and several lecture assignments.
+                    \begin{itemize}[noitemsep, topsep=-6pt, label = $\cdot$]
+                        \item Gained considerable experience with NumPy, SciPy, and matplotlib libraries.
+                        \item Developed familiarity with Unix shell, SQL, pandas, and scikit-learn.
+                    \end{itemize}
+                \item Classes:\noindent
+                    \begin{multicols}{2}
+                    \begin{itemize}[label = $\cdot$, noitemsep, topsep=0pt]
+                        \item Modeling with Data and Uncertainty
+                        \item Modeling with Dynamics and Control
+                        \item Algorithm Design and Optimization
+                        %\item Mathematical Analysis
+                        \item Differential Equations
+                        \item Multivariable Calculus
+                        \item Linear Algebra
+                    \end{itemize}
+                    \end{multicols}
+                \item Topics:\noindent
+                \begin{multicols}{3}
+                \begin{itemize}[noitemsep, topsep=0pt, label = $\cdot$]
+                    \item \mbox{Singular Value Decomposition}
+                    \item Iterative Linear Solvers
+                    \item Fourier Analysis
+                    \item Wavelets
+                    \item Gradient Descent
+                    \item BFGS Method
+                    \item Thompson Sampling
+                    \item Calculus of Variations
+                    \item Optimal Control
+                    \item \mbox{Linear Quadratic Regulators}
+                    \item Decision Trees
+                    \item Naive Bayes Classifiers
+                    \item Hidden Markov Models
+                    \item Kalman Filter
+                    \item Neural Nets
+                \end{itemize}
+                \end{multicols}
+            \end{itemize}
+        \vspace{9pt}
+            
+        \item \textbf{Computer Science Minor}%
+            \begin{itemize}[label = $\vspace{0ex}$, itemsep=-5pt,topsep=-3pt]
+                \item Programming languages used:
+                    \begin{multicols}{2}
+                    \begin{itemize}[noitemsep, topsep=-7pt, label=$\cdot$]
+                        \item C++ -- 3 classes, extensively
+                        \item Java -- 1 class, extensively
+                        \item SQL -- 2 classes, moderately
+                        \item C -- 1 class, moderately
+                    \end{itemize}
+                    \end{multicols}
+                \item Classes:
+                \begin{multicols}{2}
+                \begin{itemize}[nosep, label=$\cdot$]
+                    \item Data Structures
+                    \item Discrete Mathematics
+                    \item Computer Systems
+                    \item Advanced Programming Concepts
+                    \item Intro to Theory of Computation
+                \end{itemize}
+                \end{multicols}
+               % 
+                %\\
+                %\hspace*{\fill}Data Structures $\cdot$ Discrete Mathematics $\cdot$ Computer Systems \hspace*{\fill}\\
+                %\hspace*{\fill}Advanced Programming Concepts $\cdot$ Introduction to Theory of Computation\hspace*{\fill}
+            \end{itemize}
+    \end{rSubsection}
+\end{rSection}
+
+\begin{rSection}{Projects of Interest}
+    
+    Inverted Pendulum Simulation \hfill April 2019
+    \begin{itemize}[noitemsep, topsep=-6pt, label = $\cdot$]
+        \item Modified the code from the CartPole-v1 environment of OpenAI's gym library.
+        \item Updated from Euler's method to Runge-Kutta.
+        \item Applied an LQR control scheme to keep the pendulum upright.
+    \end{itemize}
+    \vspace{1ex}
+    Android App -- Family History Map \hfill August 2018
+    \begin{itemize}[noitemsep, topsep=-6pt, label = $\cdot$]
+        \item Wrote both the client and server in Java.
+        \item Displayed family history data with a Google MapFragment.
+        \item Implemented activities for log-in, map interaction, life event details, and app settings.
+        \item Wrote the SQL commands that the server would use to store and retrieve user data.
+    \end{itemize}
+
+\end{rSection}
+
+\begin{rSection}{Relevant Work Experience}
+    \begin{rSubsection}
+        {Math Tutor}{September 2014 -- Present}{BYU Mathematics Lab}{Head Upper Division Tutor since April 2017}
+    \end{rSubsection}
+    \begin{itemize}[topsep=-7pt, noitemsep, label = $\cdot$]
+        \item Linear Algebra, Multivariable Calculus, Differential Equations, and Mathematical Proof classes.
+        \item Conduct weekly staff meetings to help tutors prepare for each week's concepts.
+        \item Coordinate exam reviews -- then teach the reviews myself, or delegate them.
+    \end{itemize}
+\end{rSection}
+
+
+
+\end{document}
