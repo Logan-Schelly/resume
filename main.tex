@@ -1,132 +1,247 @@
-\documentclass{resume}
+\documentclass[11pt, letterpaper]{article}
+
 \usepackage[utf8]{inputenc}
 \usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+\usepackage[parfill]{parskip} % Remove paragraph indentation
+\usepackage{enumitem} % More robust enumerate and itemize environments.
+\usepackage[colorlinks, urlcolor=blue]{hyperref} % Gotta have them weblinks.
+\usepackage{amsfonts}
+\usepackage{comment}
 
-\usepackage[colorlinks, urlcolor=blue]{hyperref}%Gotta have them weblinks.
-
-\usepackage{enumitem}
-\usepackage{multicol}
-\usepackage{anyfontsize}
-\usepackage[retainorgcmds]{IEEEtrantools}
-\usepackage{vwcol}
-\setlength{\multicolsep}{0pt}
-\usepackage{scrextend}
-
-\title{R\'esum\'e 2019}
-\author{Logan Schelly}
-\date{September 2019}
-
-\name{Logan Schelly}
-\address{(951)\phantom{-}692-8802 \\ \href{mailto:idyllogan@verizon.net}{idyllogan@verizon.net}}
-\address{\href{https://www.linkedin.com/in/logan-schelly/}{linkedin.com/in/logan-schelly/}}
+\pagestyle{empty} % Suppress page numbers
 
 \begin{document}
 
-\begin{rSection}{Education}
-    \begin{rSubsection}
-    {B.S. in Mathematics}{April 2020}{Brigham Young University (BYU)}{}
-    \vspace{2pt}
-        \item \textbf{Applied and Computational Mathematics Emphasis (ACME)}
-            \begin{itemize}[label = \vspace{0ex}, itemsep = -5pt, topsep=-3pt]
-                \item Coded in Python for all 4 lab classes, and several lecture assignments.
-                    \begin{itemize}[noitemsep, topsep=-6pt, label = $\cdot$]
-                        \item Gained considerable experience with NumPy, SciPy, and matplotlib libraries.
-                        \item Developed familiarity with Unix shell, SQL, pandas, and scikit-learn.
-                    \end{itemize}
-                \item Classes:\noindent
-                    \begin{multicols}{2}
-                    \begin{itemize}[label = $\cdot$, noitemsep, topsep=0pt]
-                        \item Modeling with Data and Uncertainty
-                        \item Modeling with Dynamics and Control
-                        \item Algorithm Design and Optimization
-                        %\item Mathematical Analysis
-                        \item Differential Equations
-                        \item Multivariable Calculus
-                        \item Linear Algebra
-                    \end{itemize}
-                    \end{multicols}
-                \item Topics:\noindent
-                \begin{multicols}{3}
-                \begin{itemize}[noitemsep, topsep=0pt, label = $\cdot$]
-                    \item \mbox{Singular Value Decomposition}
-                    \item Iterative Linear Solvers
-                    \item Fourier Analysis
-                    \item Wavelets
-                    \item Gradient Descent
-                    \item BFGS Method
-                    \item Thompson Sampling
-                    \item Calculus of Variations
-                    \item Optimal Control
-                    \item \mbox{Linear Quadratic Regulators}
-                    \item Decision Trees
-                    \item Naive Bayes Classifiers
-                    \item Hidden Markov Models
-                    \item Kalman Filter
-                    \item Neural Nets
-                \end{itemize}
-                \end{multicols}
-            \end{itemize}
-        \vspace{9pt}
-            
-        \item \textbf{Computer Science Minor}%
-            \begin{itemize}[label = $\vspace{0ex}$, itemsep=-5pt,topsep=-3pt]
-                \item Programming languages used:
-                    \begin{multicols}{2}
-                    \begin{itemize}[noitemsep, topsep=-7pt, label=$\cdot$]
-                        \item C++ -- 3 classes, extensively
-                        \item Java -- 1 class, extensively
-                        \item SQL -- 2 classes, moderately
-                        \item C -- 1 class, moderately
-                    \end{itemize}
-                    \end{multicols}
-                \item Classes:
-                \begin{multicols}{2}
-                \begin{itemize}[nosep, label=$\cdot$]
-                    \item Data Structures
-                    \item Discrete Mathematics
-                    \item Computer Systems
-                    \item Advanced Programming Concepts
-                    \item Intro to Theory of Computation
-                \end{itemize}
-                \end{multicols}
-               % 
-                %\\
-                %\hspace*{\fill}Data Structures $\cdot$ Discrete Mathematics $\cdot$ Computer Systems \hspace*{\fill}\\
-                %\hspace*{\fill}Advanced Programming Concepts $\cdot$ Introduction to Theory of Computation\hspace*{\fill}
-            \end{itemize}
-    \end{rSubsection}
-\end{rSection}
+%Name
+\begin{center}
+{\Large Logan Schelly}
+\end{center}
 
-\begin{rSection}{Projects of Interest}
+%Contact Info List
+\begin{description}
+  \item [Cell Phone] 951-692-8802
+  \item [Email] \href{mailto:idyllogan@verizon.net}{idyllogan@verizon.net}
+  \item [LinkedIn] \href{https://www.linkedin.com/in/logan-schelly/}{linkedin.com/in/logan-schelly/}
+  \item [GitHub] \href{https://github.com/Logan-Schelly}{github.com/Logan-Schelly}
+\end{description}
+
+%Skills
+\section*{Technical Skills}
+  \subsection*{Computer Science}
+    \subsubsection*{Programming Languages and Libraries} 
+      \begin{description}
+        \item [Python]
+          \begin{itemize}
+            \item NumPy
+            \item SciPy
+            \item SymPy
+            \item MatplotLib
+            \item Pandas
+            \item scikit-learn
+            \item pytest
+          \end{itemize}
+        \item [JavaScript]
+          \begin{itemize}
+            \item Mocha
+            \item Chai
+            \item JSON
+          \end{itemize}
+        \item [C]
+          \begin{itemize}
+            \item unistd.h % fork() execve()
+            \item signal.h % signal handlers for SIGINT, SIGSTP, etc
+            \item pthread.h % pthread_create() pthread_join()...
+            \item sys/socket.h
+            \item omp.h (OpenMP)
+            \item regex.h
+          \end{itemize}
+        \item [Java]
+          \begin{itemize}
+            \item android
+            \item java.sql
+            \item com.google.gson
+            \item com.sun.net.httpserver
+            \item JUnit
+          \end{itemize}
+        \item [C++]
+        \item [SQL]
+          \begin{itemize}
+            \item java.sql
+            \item sqlite3 (python)
+          \end{itemize}
+        \item [Assembly for TI MSP430 microcontroller]
+      \end{description}
+    \subsubsection*{Markup Languages}
+      \begin{description}
+        \item [\LaTeX]
+        \item [HTML]
+      \end{description}
+  \subsection*{Mathematics}
     
-    Inverted Pendulum Simulation \hfill April 2019
-    \begin{itemize}[noitemsep, topsep=-6pt, label = $\cdot$]
-        \item Modified the code from the CartPole-v1 environment of OpenAI's gym library.
-        \item Updated from Euler's method to Runge-Kutta.
-        \item Applied an LQR control scheme to keep the pendulum upright.
+\section*{Education}
+  %This probably should just be straight up removed.
+  \subsection*{High School Diploma}
+    \begin{itemize}
+      \item Graduated June 2011
+      \item Attended Hemet High School
+      \item Valedictorian of 500+ students.
+      \item 4.31 GPA (out of 5.0).
     \end{itemize}
-    \vspace{1ex}
-    Android App -- Family History Map \hfill August 2018
-    \begin{itemize}[noitemsep, topsep=-6pt, label = $\cdot$]
-        \item Wrote both the client and server in Java.
-        \item Displayed family history data with a Google MapFragment.
-        \item Implemented activities for log-in, map interaction, life event details, and app settings.
-        \item Wrote the SQL commands that the server would use to store and retrieve user data.
+  \subsection*{Bachelor of Science}
+    \begin{itemize}
+      \item Attended Brightam Young University (BYU)
+      \item Majored in Mathematics -- Applied and Computational Mathematics Emphasis (ACME)
+      \item Computer Science Minor
+      \item Recognized for outstanding performance in Mathematics in 2020 and 2018.
+      \item 3.17 GPA
     \end{itemize}
+    \subsubsection{Coursework}
+      \begin{description}
+        \item [Fundamentals of Mathematics] 
+          Set Theory, 
+          Logic, 
+          Proof Techniques, 
+          Relations,
+          Functions, 
+          Induction,
+          Cardinality, 
+          Number Theory
+        \item [Linear Algebra]
+          Solving Systems of Linear Equations,
+          Matrix Algebra,
+          Determinants,
+          Vector Spaces,
+          Eigenvectors,
+          Inner Product Spaces,
+          Quadratic Forms,
+          Singular Value Decomposition
+        \item [Calculus of Several Variables]
+          Quadric Surfaces,
+          Vector Functions,
+          Partial Derivatives,
+          Multiple Integrals,
+          Vector Calculus
+        \item [Differential Equations]
+          First Order Differential Equations,
+          Second Order Linear Differential Equations,
+          Series Solutions of Second Order Equations,
+          Laplace Transformation,
+          Systems of First Order Linear Equations,
+          Numerical Methods
+        \item [Theory of Analysis]
+          Properties of the Real Numbers,
+          Sequences and Series,
+          Topology of $\mathbb{R}$,
+          Limits and Cointinuity of Functions,
+          Derivatives,
+          Sequences and Series of Functions,
+          Riemann Integral
+        \item [Mathematical Analysis]
+          Abstract Vector Spaces,
+          Linear Transformations and Matrices,
+          Inner Product Spaces,
+          Spectral Theory,
+          Metric Space Topology,
+          Fr\'echet Differentiation,
+          Contraction Mappings,
+          Daniell-Lebesgue Integration,
+          Calculus on Manifolds,
+          Complex Analysis,
+          Spectral Calculus,
+          Iterative Methods for Linear Systems
+        \item [Algorithm Design and Optimization]
+          Measuring Algorithm Complexity,
+          Data Structures,
+          Combinatorial Optimization,
+          Probability,
+          Probabilistic Sampling and Estimation,
+          Random Algorithms,
+          Harmonic Analysis,
+          Polynomial Approximation and Interpoloation,
+          Unconstrained Optimization,
+          Linear Optimization,
+          Nonlinear Constrained Optimization,
+          Convex Analysis and Optimization,
+          Dynamic Optimization,
+          Stochastic Dynamic Optimization
+        \item [Modeling with Uncertainty and Data]
+          Markov Chains,
+          Classical Inference,
+          Hypothesis Testing,
+          Regression and Classification,
+          Bayesian Analysis,
+          Estimation in State Space Models,
+          Machine Learning,
+          Unsupervised Methods,
+          Graphical and Latent Variable Models,
+          Kernel Methods,
+          Tree-Based Methods
+        \item [Modeling with Dynamics and Control]
 
-\end{rSection}
+      \end{description}
 
-\begin{rSection}{Relevant Work Experience}
-    \begin{rSubsection}
-        {Math Tutor}{September 2014 -- Present}{BYU Mathematics Lab}{Head Upper Division Tutor since April 2017}
-    \end{rSubsection}
-    \begin{itemize}[topsep=-7pt, noitemsep, label = $\cdot$]
-        \item Linear Algebra, Multivariable Calculus, Differential Equations, and Mathematical Proof classes.
-        \item Conduct weekly staff meetings to help tutors prepare for each week's concepts.
-        \item Coordinate exam reviews -- then teach the reviews myself, or delegate them.
+\section*{
+  %Relevant % <- Remove the percent before Relevant to really parse back 
+  Work Experience
+}
+  \subsection*{K\&M Strategic Management}
+    \begin{itemize}
+      \item Summer 2011 and May 2012 to January 2013.
     \end{itemize}
-\end{rSection}
-
-
-
+  \subsection*{Idyllwild Garage}
+    \begin{itemize}
+      \item Summer 2011 and May 2012 to January 2013.
+    \end{itemize}
+  \subsection*{Private Tutoring}
+    \begin{itemize}
+      \item Private tutoring began September 2012
+      \item Natalie Dunn
+      \item Scheridan Vorwaller
+      \item Jared Cripe
+      \item Billy and Jackie Clark
+      \item Kenny Valdez
+      \item Ansah Antwi
+    \end{itemize}
+  \subsection*{Hemet High School}
+    \begin{itemize}
+      \item AVID tutor
+      \item October 2013 through April 2014
+      \item AVID (Advancement Via Individual Determination) is a global nonprofit organization dedicated to closing the achievement gap
+        by preparing all students for college and other postsecondary opportunities.
+        AVID requires students to form study groups.
+        My job was to mentor and tutor these study groups.
+        I worked with high school freshmen, sophomores, and juniors.
+    \end{itemize}
+  \subsection*{Jiffy Lube}
+    \begin{itemize}
+      \item May 2015 -- September 2015
+      \item May 2016 -- August 2016
+    \end{itemize}
+  \subsection*{BYU Math Lab}
+    \begin{itemize}
+      \item September 2014 to April 2020.
+      \item Began as a tutor for Calc 1 and Calc 2.
+      \item A year later, became a tutor for Linear Algebra, Multivariable Calculus, Differential Equations, and Introduction to Proofs.
+      \item Became head upper division tutor in May 2017.
+    \end{itemize}
+\section*{Projects}
+  \subsection*{FamilyMap Android App}
+  \subsection*{Inverted Pendulum Control}
+  \subsection*{Math Lab Student Sign Up Analysis}
+  \subsection*{Graph-Based Image Segmentation}
+  \subsection*{SVD Image Compression}
+  \subsection*{Facial Recognition with Eigenfaces}
+  \subsection*{Applications of PageRank Algorithm}
+  \subsection*{Drazin Inverse for Social Network Link Prediction}
+  \subsection*{Jacobi, Gauss-Seidel, and Successive Over-Relaxation for Solving Linear Systems}
+  \subsection*{Linked Lists}
+  \subsection*{Binary Search Trees}
+  \subsection*{K-D Trees for K-Nearest Neighbors}
+  \subsection*{Breadth First Search and Six Degrees of Kevin Bacon}
+  \subsection*{Random Speech Generation with Markov Chains}
+  \subsection*{Simplex Method}
+  \subsection*{}
+  \subsection*{Tiny Shell}
+  \subsection*{HTTP Proxy}
+  \subsection*{OpenMP with Mandlebrot Set}
 \end{document}
