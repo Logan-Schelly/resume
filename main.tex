@@ -1,102 +1,191 @@
-\documentclass[11pt, letterpaper]{article}
-
+\documentclass[12pt]{article}
+\usepackage{ibmres}
 \usepackage[utf8]{inputenc}
 \usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
-\usepackage[parfill]{parskip} % Remove paragraph indentation
 \usepackage{enumitem} % More robust enumerate and itemize environments.
-\usepackage[colorlinks, urlcolor=blue]{hyperref} % Gotta have them weblinks.
-\usepackage{amsfonts}
-\usepackage{comment}
+\usepackage[colorlinks, urlcolor=blue]{hyperref} % Seblinks.
+\usepackage{amsfonts} % A couple math symbols.
+\usepackage{comment} % For cutting out irrelevant stuff in tailored resumes. 
 
-\pagestyle{empty} % Suppress page numbers
+\def\courses#1{\sectiontitle{Courses}#1\par}
 
 \begin{document}
 
-%Name
-\begin{center}
-{\Large Logan Schelly}
-\end{center}
+\name{Logan Schelly}
 
-%Contact Info List
-\begin{description}
-  \item [Cell Phone] 951-692-8802
-  \item [Email] \href{mailto:idyllogan@verizon.net}{idyllogan@verizon.net}
-  \item [LinkedIn] \href{https://www.linkedin.com/in/logan-schelly/}{linkedin.com/in/logan-schelly/}
-  \item [GitHub] \href{https://github.com/Logan-Schelly}{github.com/Logan-Schelly}
-\end{description}
+%\preferredtitle0{}
 
-%Skills
-\section*{Technical Skills}
-  \subsection*{Computer Science}
-    \subsubsection*{Programming Languages and Libraries} 
+\school0{Brigham Young University}
+\email{\href{mailto:idyllogan@verizon.net}{idyllogan@verizon.net}}
+\discipline0{mathematics}
+\highestdegree0{BS}
+\degreeyear0{2020}
+
+\oneaddressandphone{
+999 E 450 N\\
+Apartment 28\\
+Provo, UT 84606\\
+(951) 692--8802
+}
+
+\presentstatus{Recent Graduate}
+\immigrationstatus{US Citizen}
+\typeofpositiondesired{Full Time}
+\availabledate{Now}
+
+\employerspecifictitle{}
+\employerspecificdata{}
+
+\objective{Entry-level employment as a data or software professional.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\education{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\place{Brigham Young University}
+\when{April 2020}
+\place{Provo, UT}
+\degree{
+  BS in Mathematics; 
+  Applied and Computational Mathematics Emphasis (ACME); 
+  Computer Science Minor
+}
+\gpa{3.17}
+\outof{4.0}
+
+\place{Hemet High School}
+\when{June 2011}
+\place{Hemet, CA}
+\degree{
+  High School Diploma
+}
+\gpa{4.31}
+\outof{5.0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\skills{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\text{
+  Python
+  --
+  NumPy,
+  SciPy,
+  SymPy,
+  Matplotlib,
+  Pandas,
+  scikit-learn,
+  pytest
+}
+\text{
+  Javascript
+  --
+  Mocha,
+  Chai,
+  JSON
+}
+\text{
+  C
+  --
+  unistd.h, % fork() execve()
+  signal.h, % signal handlers for SIGINT, SIGSTP, etc
+  pthread.h, % pthread_create() pthread_join()...
+  sys/socket.h,
+  omp.h (OpenMP),
+  regex.h
+}
+\text{
+  Java
+  --
+  android,
+  java.sql,
+  gson,
+  com.sun.net.httpserver,
+  JUnit
+}
+\text{
+  C++
+}
+\text{
+  SQL
+}
+\text{
+  \LaTeX
+}
+\text{
+  HTML
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\employment{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\when{September 2014 to April 2020}
+\place{BYU Math Lab}
+\location{Provo, UT}
+\text{
+I started as a lower division tutor and left as the head upper division tutor.
+
+Helped students on a first-come-first-served basis with
+College Algebra,
+Trigonometry,
+Differential and Integral Calculus,
+Introductory Proofs,
+Linear Algebra,
+Multivariable Calculus, and
+Differential Equations.
+I would teach at least 3 exam reviews each semester.
+
+As the head upper division tutor, I had additional responsibilities.
+I organized weekly tutor training meetings for upper division tutors, 
+coordinated exam reviews for each midterm exam,
+and reported directly to the Math Lab Administrator.
+}
+
+\when{Summers 2015 and 2016}
+\place{Jiffy Lube}
+\location{Provo, UT}
+\text{
+I took an auto shop class in high school.
+I applied to work at Jiffy Lube because I wanted to understand cars more. 
+ 
+I worked as a technician.
+I serviced up to 50 cars per day.
+I changed oil, rotated tires, or replaced brake pads.
+I checked and filled fluids as necessary.
+I repaired minor windshield damage.
+I performed basic inspections for wear and tear.
+I let the customers know of any necessary or useful additional services.
+}
+
+\when{October 2013 to April 2014}
+\place{Hemet High School}
+\location{Hemet, CA}
+\text{
+I mentored and tutored AVID study groups.
+AVID (Advancement Via Individual Determination) is a global nonprofit organization 
+dedicated to closing the achievement gap 
+by preparing all students for college and other postsecondary opportunities.
+I worked with high school freshmen, sophomores, and juniors.
+}
+
+\when{2012 to Present}
+\place{Private Tutoring}
+\location{Hemet, CA and Provo, UT}
+
+\when{Summer 2011 and May 2012 to January 2013}
+\place{K\&M Strategic Management}
+\location{Hemet, CA}
+\text{Landscape maintenance}
+
+\when{Summer 2011 and May 2012 to January 2013}
+\place{Idyllwild Garage}
+\location{Idyllwild, CA}
+\text{Gas station clerk}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\courses{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\text{
       \begin{description}
-        \item [Python]
-          \begin{itemize}
-            \item NumPy
-            \item SciPy
-            \item SymPy
-            \item MatplotLib
-            \item Pandas
-            \item scikit-learn
-            \item pytest
-          \end{itemize}
-        \item [JavaScript]
-          \begin{itemize}
-            \item Mocha
-            \item Chai
-            \item JSON
-          \end{itemize}
-        \item [C]
-          \begin{itemize}
-            \item unistd.h % fork() execve()
-            \item signal.h % signal handlers for SIGINT, SIGSTP, etc
-            \item pthread.h % pthread_create() pthread_join()...
-            \item sys/socket.h
-            \item omp.h (OpenMP)
-            \item regex.h
-          \end{itemize}
-        \item [Java]
-          \begin{itemize}
-            \item android
-            \item java.sql
-            \item com.google.gson
-            \item com.sun.net.httpserver
-            \item JUnit
-          \end{itemize}
-        \item [C++]
-        \item [SQL]
-          \begin{itemize}
-            \item java.sql
-            \item sqlite3 (python)
-          \end{itemize}
-        \item [Assembly for TI MSP430 microcontroller]
-      \end{description}
-    \subsubsection*{Markup Languages}
-      \begin{description}
-        \item [\LaTeX]
-        \item [HTML]
-      \end{description}
-  \subsection*{Mathematics}
-    
-\section*{Education}
-  %This probably should just be straight up removed.
-  \subsection*{High School Diploma}
-    \begin{itemize}
-      \item Graduated June 2011
-      \item Attended Hemet High School
-      \item Valedictorian of 500+ students.
-      \item 4.31 GPA (out of 5.0).
-    \end{itemize}
-  \subsection*{Bachelor of Science}
-    \begin{itemize}
-      \item Attended Brightam Young University (BYU)
-      \item Majored in Mathematics -- Applied and Computational Mathematics Emphasis (ACME)
-      \item Computer Science Minor
-      \item Recognized for outstanding performance in Mathematics in 2020 and 2018.
-      \item 3.17 GPA
-    \end{itemize}
-    \subsubsection{Coursework}
-      \begin{description}
+          [before={\renewcommand\makelabel[1]{\emph{##1}}}]
         \item [Fundamentals of Mathematics] 
           Set Theory, 
           Logic, 
@@ -179,6 +268,87 @@
         \item [Modeling with Dynamics and Control]
 
       \end{description}
+}
+
+\begin{comment}
+
+%Contact Info List
+\begin{description}
+  \item [LinkedIn] \href{https://www.linkedin.com/in/logan-schelly/}{linkedin.com/in/logan-schelly/}
+  \item [GitHub] \href{https://github.com/Logan-Schelly}{github.com/Logan-Schelly}
+\end{description}
+
+%Skills
+\section*{Technical Skills}
+  \subsection*{Computer Science}
+    \subsubsection*{Programming Languages and Libraries} 
+      \begin{description}
+        \item [Python]
+          \begin{itemize}
+            \item NumPy
+            \item SciPy
+            \item SymPy
+            \item MatplotLib
+            \item Pandas
+            \item scikit-learn
+            \item pytest
+          \end{itemize}
+        \item [JavaScript]
+          \begin{itemize}
+            \item Mocha
+            \item Chai
+            \item JSON
+          \end{itemize}
+        \item [C]
+          \begin{itemize}
+            \item unistd.h % fork() execve()
+            \item signal.h % signal handlers for SIGINT, SIGSTP, etc
+            \item pthread.h % pthread_create() pthread_join()...
+            \item sys/socket.h
+            \item omp.h (OpenMP)
+            \item regex.h
+          \end{itemize}
+        \item [Java]
+          \begin{itemize}
+            \item android
+            \item java.sql
+            \item com.google.gson
+            \item com.sun.net.httpserver
+            \item JUnit
+          \end{itemize}
+        \item [C++]
+        \item [SQL]
+          \begin{itemize}
+            \item java.sql
+            \item sqlite3 (python)
+          \end{itemize}
+        \item [Assembly for TI MSP430 microcontroller]
+      \end{description}
+    \subsubsection*{Markup Languages}
+      \begin{description}
+        \item [\LaTeX]
+        \item [HTML]
+      \end{description}
+  \subsection*{Mathematics}
+    
+\section*{Education}
+  %This probably should just be straight up removed.
+  \subsection*{High School Diploma}
+    \begin{itemize}
+      \item Graduated June 2011
+      \item Attended Hemet High School
+      \item Valedictorian of 500+ students.
+      \item 4.31 GPA (out of 5.0).
+    \end{itemize}
+  \subsection*{Bachelor of Science}
+    \begin{itemize}
+      \item Attended Brightam Young University (BYU)
+      \item Majored in Mathematics -- Applied and Computational Mathematics Emphasis (ACME)
+      \item Computer Science Minor
+      \item Recognized for outstanding performance in Mathematics in 2020 and 2018.
+      \item 3.17 GPA
+    \end{itemize}
+      \end{description}
 
 \section*{
   %Relevant % <- Remove the percent before Relevant to really parse back 
@@ -244,4 +414,6 @@
   \subsection*{Tiny Shell}
   \subsection*{HTTP Proxy}
   \subsection*{OpenMP with Mandlebrot Set}
+\end{comment}
+\coverletter{}
 \end{document}
