@@ -1,404 +1,434 @@
-\documentclass[12pt]{article}
-\usepackage{ibmres}
+\documentclass{article}
 \usepackage[utf8]{inputenc}
-\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
-\usepackage{enumitem} % More robust enumerate and itemize environments.
-\usepackage[colorlinks, urlcolor=blue]{hyperref} % Seblinks.
-\usepackage{amsfonts} % A couple math symbols.
-\usepackage{comment} % For cutting out irrelevant stuff in tailored resumes. 
+\usepackage[letterpaper, margin=.5in]{geometry}
+\usepackage[parfill]{parskip} % Remove paragraph indentation
+\usepackage{enumitem} % Modify list layouts
+\usepackage{tabularx} % Tables the same width as the page.
+\usepackage{scrextend} % Add margin environment
+\usepackage{amsfonts} % Math symbols
+\usepackage{calc} % widthof and length operations (like subtraction)
+\usepackage[colorlinks, urlcolor=blue]{hyperref}
+\usepackage{multicol}
+\usepackage{comment}
+\pagestyle{empty} % Suppress page numbers
+\setlength{\multicolsep}{0pt} %Prevent multicol from hogging vertical whitespace
 
-\def\courses#1{\sectiontitle{Courses}#1\par}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5555
+%My Macros: TODO: move these into a .sty sheet.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Compact lists TODO: just set these to default.
+\newenvironment{compactItemize}{
+  \begin{itemize}[itemsep=0ex, parsep=0ex, partopsep=0ex, topsep= -7pt]
+}{
+  \end{itemize}
+}
+
+
+%Fill with line at text level.
+\newcommand{\lineFill}{\leaders\hbox{\rule[.5ex]{1pt}{.1pt}}\hfill}
+
+%Technical Skill Listings
+\newcommand{\technicalSkill}[3]{
+  \makebox[20ex][l]{#1 \lineFill} 
+  #2 \lineFill #3
+}
+\newenvironment{technicalSkillWithSubskills}[3]{
+  \newcommand{\subskill}[1]{\item ##1}
+  \technicalSkill{#1}{#2}{#3}
+  \smallskip
+  \begin{multicols}{4}
+  \begin{itemize}[parsep=0ex, partopsep=0ex, topsep=-.7ex, itemsep=-.5ex]
+  }{
+  \end{itemize}
+  \end{multicols}
+  \medskip
+}
+
+%Job info Listings
+\newcommand{\jobInfo}[4]{
+  \begingroup
+  \setlength{\tabcolsep}{0ex}
+  \begin{tabularx}{\linewidth}{X r}
+    #1 & % position 
+    #2\\ % time range
+    #3 & % company
+    #4   % location
+  \end{tabularx}%
+  \endgroup%
+}
+\newcommand{\degree}[4]{
+  % Use same layout as jobInfo
+  % Order is degree, grad date, institution, GPA)
+  \jobInfo{\textbf{#1}}{#2}{#3}{#4}
+}
+\newcommand{\project}[2]{
+  \begingroup
+  \setlength{\tabcolsep}{0ex}
+  \begin{tabularx}{\linewidth}{X r}
+    #1 & % project name
+    #2\\ % time range
+  \end{tabularx}%
+  \endgroup%
+}
 
 \begin{document}
 
-\name{Logan Schelly}
+\begin{center}
+{\Large Logan Schelly} %Make a \fullName command.
 
-%\preferredtitle0{}
+(951)\phantom{-}692-8802 %Make a \phoneNumber{}{}{} command \
+$\bullet$ %make a separator commmand.                        |-> Make an essential contact info command.
+idyllogan@verizon.net %Make an \email command.              /
+\end{center}
 
-\school0{Brigham Young University}
-\email{\href{mailto:idyllogan@verizon.net}{idyllogan@verizon.net}}
-\discipline0{mathematics}
-\highestdegree0{BS}
-\degreeyear0{2020}
+\textbf{Objective}
+\smallskip
+\hrule
+I am a recent graduate.
+My ultimate career goal would be to work on a project like Intel's Math Kernel Library.
+For the time being I am looking for an entry-level job in software, data, or (if possible) high performance computing.
 
-\oneaddressandphone{
-999 E 450 N\\
-Apartment 28\\
-Provo, UT 84606\\
-(951) 692--8802
+\textbf{Education}
+\smallskip
+\hrule
+
+\degree{Bachelors of Science in Mathematics}{April 2020}{Brigham Young University}{GPA: 3.17 out of 4.0}
+%
+\begin{itemize}[labelindent=2ex, itemsep=0ex, parsep=0ex, partopsep=0ex, topsep= -.7ex]%Need to undo the parskip from usual start
+  \item Applied and Computational Mathematics Emphasis (ACME)
+  \item Computer Science Minor
+  \item Recognized for outstanding performance in Mathematics in 2020 and 2018
+\end{itemize}
+
+\begin{addmargin}{2ex}
+
+\textbf{Course Work and Topics}
+  \begin{itemize}[labelindent=2ex, parsep=0ex, partopsep=0ex, topsep=-.7ex]
+    \item Fundamentals of Mathematics
+      \begin{multicols}{4}
+        \begin{itemize}[labelindent=2ex, parsep=0ex, partopsep=0ex, topsep=-.7ex]
+          \item Set Theory
+          \item Logic
+          \item Proof Techniques
+          \item Relations
+          \item Functions
+          \item Induction
+          \item Cardinality
+          \item Number Theory
+        \end{itemize}
+      \end{multicols}
+    \item Linear Algebra
+      \begin{multicols}{3}
+        \begin{itemize}
+          \item Solving Linear Systems
+          \item Matrix Algebra
+          \item Determinants
+          \item Vector Spaces
+          \item Eigenvectors
+          \item Inner Product Spaces
+          \item Quadratic Forms
+          \item Singular Value Decomposition
+        \end{itemize}
+      \end{multicols}
+    \item Calculus of Several Variables
+      \begin{multicols}{3}
+        \begin{itemize}
+          \item Quadric Surfaces
+          \item Vector Functions
+          \item Partial Derivatives
+          \item Multiple Integrals
+          \item Vector Calculus
+        \end{itemize}
+      \end{multicols}
+    \item Differential Equations
+      \begin{multicols}{2}
+        \begin{itemize}
+          \item First Order Differential Equations
+          \item Second Order Linear Differential Equations
+          \item Series Solutions of Second Order Equations
+          \item Laplace Transformation
+          \item Systems of First Order Linear Equations
+          \item Numerical Methods
+        \end{itemize}
+      \end{multicols}
+    \item Theory of Analysis
+      \begin{multicols}{2}
+        \begin{itemize}
+          \item Properites of the Real Numbers
+          \item Sequences and Series
+          \item Topology of $\mathbb{R}$
+          \item Limits and Continuity of Functions
+          \item Derivatives
+          \item Sequences and Series of Functions
+          \item Riemann Integration
+        \end{itemize}
+      \end{multicols}
+    \item Mathematical Analysis
+      \begin{multicols}{2}
+        \begin{itemize}
+          \item Abstract Vector Spaces
+          \item Linear Transformations and Matrices
+          \item Inner Product Spaces
+          \item Spectral Theory
+          \item Metric Space Topology
+          \item Fr\'echet Differentiation
+          \item Contraction Mappings
+          \item Daniell-Lebesgue Integration
+          \item Calculus on Manifolds
+          \item Complex Analysis
+          \item Spectral Calculus
+          \item Iterative Methods for Linear Systems
+       \end{itemize}
+      \end{multicols}
+     \item Algorithm Design and Optimization
+      \begin{multicols}{2}
+        \begin{itemize}
+          \item Measuring Algorithm Complexity
+          \item Data Structures
+          \item Combinatorial Optimization
+          \item Probability
+          \item Probabilistic Sampling and Estimation
+          \item Random Algorithms
+          \item Harmonic Analysis
+          \item Polynomial Approximation and Interpoloation
+          \item Unconstrained Optimization
+          \item Linear Optimization
+          \item Nonlinear Constrained Optimization
+          \item Convex Analysis and Optimization
+          \item Dynamic Optimization
+          \item Stochastic Dynamic Optimization
+       \end{itemize}
+      \end{multicols}
+    \item Modeling with Uncertainty and Data
+      \begin{multicols}{2}
+        \begin{itemize}
+          \item Markov Chains
+          \item Classical Inference
+          \item Hypothesis Testing
+          \item Regression and Classification
+          \item Bayesian Analysis
+          \item Estimation in State Space Models
+          \item Machine Learning
+          \item Unsupervised Methods
+          \item Graphical and Latent Variable Models
+          \item Kernel Methods
+          \item Tree-Based Methods
+        \end{itemize}
+      \end{multicols}
+    \item Modeling with Dynamics and Control
+      \begin{multicols}{2}
+        \begin{itemize}
+          \item Existence and Uniqueness Theorem
+          \item Stability Theory
+          \item Bifurcation Theory
+          \item Partial Differential Equations
+          \item Calculus of Variations
+          \item Euler's Equation
+          \item Hamilton's Principle
+          \item Noether's Theorem
+          \item Optimal Control
+          \item Pontryagin's Maximum Principle
+          \item Linear Quadratic Regulators
+        \end{itemize}
+      \end{multicols}
+  \end{itemize}
+\end{addmargin}
+
+
+\textbf{Skills}
+\smallskip
+\hrule
+\textbf{Programming Languages}
+\begin{itemize}[leftmargin=3ex, parsep=1ex, partopsep=0ex, topsep=-.7ex, itemsep=.5ex, label={}]
+  \item
+  \begin{technicalSkillWithSubskills}
+    {Python}
+    {Very Comfortable}
+    {used in 8 lab classes and 4 lecture classes}
+    \subskill{NumPy}
+    \subskill{Scipy}
+    \subskill{Matplotlib}
+    \subskill{SymPy}
+    \subskill{Pandas}
+    \subskill{scikit-learn}
+    \subskill{pytest}
+    \subskill{Selenium}
+    \subskill{Beautiful Soup}
+    \subskill{sqlite3}
+  \end{technicalSkillWithSubskills}
+  \item
+  \begin{technicalSkillWithSubskills}
+    {C}
+    {Proficient}
+    {used in 2 lecture classes}
+    \subskill{\texttt{unistd.h}} % fork() execve()
+    \subskill{\texttt{signal.h}}  % signal handlers for SIGINT, SIGSTP, etc
+    \subskill{\texttt{pthread.h}} % pthread_create() pthread_join()...
+    \subskill{\texttt{sys/socket.h}}
+    \subskill{\texttt{omp.h} (OpenMP)}
+    \subskill{\texttt{regex.h}}
+  \end{technicalSkillWithSubskills}
+  \item
+  \begin{technicalSkillWithSubskills}
+    {JavaScript}
+    {Beginner}
+    {self taught at \href{https://javascript.info}{javascript.info}, and listed as a \href{https://javascript.info/about}{contributor}}
+    \subskill{JSON}
+    \subskill{Mocha}
+    \subskill{Chai}
+  \end{technicalSkillWithSubskills}
+  \item
+  \begin{technicalSkillWithSubskills}
+    {Java}
+    {Proficient, but rusty}
+    {used extensively in 1 lecture class}
+    \subskill{GSON}
+    \subskill{\texttt{java.sql}}
+    \subskill{JUnit}
+    \subskill{Android}
+  \end{technicalSkillWithSubskills}
+  \item \technicalSkill{C++}{Proficient, but rusty}{used in 3 lecture classes}
+\end{itemize}
+
+\textbf{Other Tools}
+\begin{multicols}{2}
+  \begin{compactItemize}
+    \item \LaTeX -- Proficient
+    \item Spreadsheets -- Proficient
+    \item Git -- Intermediate
+    \item HTML -- Beginner
+  \end{compactItemize}
+\end{multicols}
+
+\textbf{Soft Skills}
+  \begin{center}
+  Tutoring $\bullet$ Attention to Detail $\bullet$ Troubleshooting $\bullet$ Public Speaking $\bullet$ Leadership $\bullet$ Project Coordination
+  \end{center}
+
+\textbf{Work Experience}
+\smallskip
+\hrule
+
+\jobInfo{Head Upper Division Tutor}{Provo, UT}{BYU Math Lab}{Sep 2014 -- April 2020}
+\begin{compactItemize}
+  \item Helped students on a first-come first-served basis.
+  \item Tutored Linear Algebra, Multivariable Calculus, Differential Equations, and Mathematical Proof classes.
+  \item Conducted weekly meetings to help our team of 10-20 upper division tutors prepare for that week's concepts.
+  \item Coordinated exam reviews, and often taught them.  10 to 200 students attended, depending on enrollment and subject.
+  \item Overhauled the tutor handbook.
+  \item Expanded the tutor application test to include a Mathematical Proof section.
+\end{compactItemize}
+\medskip
+
+\jobInfo{Applied Math TA}{Provo, UT}{BYU Math Department}{Winter 2019}
+\begin{compactItemize}
+  \item 3 times a week I held office hours to help ACME juniors with their Optimization and Mathematical Analysis homework.
+  \item Usually helped between 5 and 10 students.
+\end{compactItemize}
+\medskip
+
+\jobInfo{Lube Technician}{Provo, UT}{Jiffy Lube}{Summers 2015 and 2016}
+\begin{compactItemize}
+  \item Serviced up to 50 cars each day.
+  \item Changed oil, rotated tires, replaced brake pads, checked and filled under-hood fluids.
+  \item Performed basic inspections for wear and tear.
+  \item Repaired windshield rock chips.
+\end{compactItemize}
+\medskip
+
+\jobInfo{Private Tutor}{Hemet, CA}{Self Employed}{September 2012 -- April 2014}
+\begin{compactItemize}
+  \item Tutored 6 different students individually.  The students were in middle school and high school. 
+\end{compactItemize}
+\medskip
+
+\jobInfo{Gas Station Clerk}{Idyllwild, CA}{Idyllwild Garage}{Summer 2011 and May 2012 -- January 2013}
+\begin{compactItemize}
+  \item Depending on the shift, would open or close the store.
+  \item Stocked shelves and updated inventory.
+  \item Dispensed propane for customers with tanks.
+  \item Serviced customers and kept the store clean.
+\end{compactItemize}
+\medskip
+
+\jobInfo{Landscape Maintenance Crewmember}{K\&M Strategic Management}{Hemet, CA}{Summer 2011 and May 2012 -- January 2013}
+\begin{compactItemize}
+  \item Leaf-blew the parking lots and picked up trash at managed medical properties every morning.
+  \item Weeded, raked, and maintained the landscape at properties.
+  \item Cleaned out an empty strip mall in preparation for sale.
+  \item Repainted fences, parking lines, and breakrooms.
+\end{compactItemize}
+\medskip
+
+\textbf{Projects %Of Interest
 }
+\smallskip
+\hrule
 
-\presentstatus{Recent Graduate}
-\immigrationstatus{US Citizen}
-\typeofpositiondesired{Full Time}
-\availabledate{Now}
+\project{Math Lab Student Sign Up Analysis}{Fall 2019 -- Winter 2020}
+\begin{compactItemize}
+  \item Consolidated data spread across 60+ Excel files.
+  \item Used Pandas to analyze the almost 900,000+ instances of students signing up for tutor help.
+  \item Identified busiest times of the week, and the topics students most often came in for help with.
+  \item Advised scheduling more tutors in the mornings based on my findings.
+\end{compactItemize}
+\medskip
 
-\employerspecifictitle{}
-\employerspecificdata{}
+\project{HTTP Proxy}{Winter 2020}
+\begin{compactItemize}
+  \item Relayed user requests to end server, and relayed server responses to user.
+  \item Used \texttt{regex.h} to verify that user requests met HTTP formatting requirements.
+  \item Handled concurrent requests with a threadpool using \texttt{pthread.h} and \texttt{semaphore.h}.
+\end{compactItemize}
+\medskip
 
-\objective{Entry-level employment as a data or software professional.}
+\project{DNS Stub Resolver}{Winter 2020}
+\begin{compactItemize}
+  \item Program interfaced with DNS servers to look up IP addresses associated with a web domain name.
+        For example, it would figure out that the domain name www.example.com is associated with IP address 93.184.216.34.
+  \item Formatted queries to DNS standards, sent the queries with UDP, and then decoded responses.
+  \item Written C with \texttt{unistd.h}, \texttt{sys/socket.h}, \texttt{arpa/inet.h}, and \texttt{netinet/in.h}.
+\end{compactItemize}
+\medskip
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\education{}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\place{Brigham Young University}
-\when{April 2020}
-\place{Provo, UT}
-\degree{
-  BS in Mathematics; 
-  Applied and Computational Mathematics Emphasis (ACME); 
-  Computer Science Minor
-}
-\gpa{3.17}
-\outof{4.0}
+\project{OpenMP with Mandelbrot Set}{Winter 2020}
+\begin{compactItemize}
+  \item Parallelized the \href{https://gist.github.com/andrejbauer/7919569}{Mandelbrot visualization code} posted on github by Andrej Bauer.
+\end{compactItemize}
+\medskip
 
-\place{Hemet High School}
-\when{June 2011}
-\place{Hemet, CA}
-\degree{
-  High School Diploma
-}
-\gpa{4.31}
-\outof{5.0}
+\project{Tiny Shell}{Winter 2020}
+\begin{compactItemize}
+  \item Wrote a simple shell that could handle process creation, I/O redirection and pipelines, and process control.
+  \item Used C with \texttt{unistd.h} and \texttt{signal.h}.
+\end{compactItemize}
+\medskip
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\skills{}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\text{
-  Python
-  --
-  NumPy,
-  SciPy,
-  SymPy,
-  Matplotlib,
-  Pandas,
-  scikit-learn,
-  pytest
-}
-\text{
-  Javascript
-  --
-  Mocha,
-  Chai,
-  JSON
-}
-\text{
-  C
-  --
-  unistd.h, % fork() execve()
-  signal.h, % signal handlers for SIGINT, SIGSTP, etc
-  pthread.h, % pthread_create() pthread_join()...
-  sys/socket.h,
-  omp.h (OpenMP),
-  regex.h
-}
-\text{
-  Java
-  --
-  android,
-  java.sql,
-  gson,
-  com.sun.net.httpserver,
-  JUnit
-}
-\text{
-  C++
-}
-\text{
-  SQL
-}
-\text{
-  \LaTeX
-}
-\text{
-  HTML
-}
+\project{Inverted Pendulum Control}{Winter 2019}
+\begin{compactItemize}
+  \item Modified the code from the CartPole-v1 environment of OpenAI's gym library.
+  \item Updated from Euler's method to Runge-Kutta.
+  \item Applied an LQR control scheme to keep the pendulum upright.
+\end{compactItemize}
+\medskip
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\employment{}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\when{September 2014 to April 2020}
-\place{BYU Math Lab}
-\location{Provo, UT}
-\text{
-I started as a lower division tutor and left as the head upper division tutor.
-
-Helped students on a first-come-first-served basis with
-College Algebra,
-Trigonometry,
-Differential and Integral Calculus,
-Introductory Proofs,
-Linear Algebra,
-Multivariable Calculus, and
-Differential Equations.
-I would teach at least 3 exam reviews each semester.
-
-As the head upper division tutor, I had additional responsibilities.
-I organized weekly tutor training meetings for upper division tutors, 
-coordinated exam reviews for each midterm exam,
-and reported directly to the Math Lab Administrator.
-}
-
-\when{Summers 2015 and 2016}
-\place{Jiffy Lube}
-\location{Provo, UT}
-\text{
-I took an auto shop class in high school.
-I applied to work at Jiffy Lube because I wanted to understand cars more. 
- 
-I worked as a technician.
-I serviced up to 50 cars per day.
-I changed oil, rotated tires, or replaced brake pads.
-I checked and filled fluids as necessary.
-I repaired minor windshield damage.
-I performed basic inspections for wear and tear.
-I let the customers know of any necessary or useful additional services.
-}
-
-\when{October 2013 to April 2014}
-\place{Hemet High School}
-\location{Hemet, CA}
-\text{
-I mentored and tutored AVID study groups.
-AVID (Advancement Via Individual Determination) is a global nonprofit organization 
-dedicated to closing the achievement gap 
-by preparing all students for college and other postsecondary opportunities.
-I worked with high school freshmen, sophomores, and juniors.
-}
-
-\when{2012 to Present}
-\place{Private Tutoring}
-\location{Hemet, CA and Provo, UT}
-
-\when{Summer 2011 and May 2012 to January 2013}
-\place{K\&M Strategic Management}
-\location{Hemet, CA}
-\text{Landscape maintenance}
-
-\when{Summer 2011 and May 2012 to January 2013}
-\place{Idyllwild Garage}
-\location{Idyllwild, CA}
-\text{Gas station clerk}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\courses{}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\text{
-      \begin{description}
-          [before={\renewcommand\makelabel[1]{\emph{##1}}}]
-        \item [Fundamentals of Mathematics] 
-          Set Theory, 
-          Logic, 
-          Proof Techniques, 
-          Relations,
-          Functions, 
-          Induction,
-          Cardinality, 
-          Number Theory
-        \item [Linear Algebra]
-          Solving Systems of Linear Equations,
-          Matrix Algebra,
-          Determinants,
-          Vector Spaces,
-          Eigenvectors,
-          Inner Product Spaces,
-          Quadratic Forms,
-          Singular Value Decomposition
-        \item [Calculus of Several Variables]
-          Quadric Surfaces,
-          Vector Functions,
-          Partial Derivatives,
-          Multiple Integrals,
-          Vector Calculus
-        \item [Differential Equations]
-          First Order Differential Equations,
-          Second Order Linear Differential Equations,
-          Series Solutions of Second Order Equations,
-          Laplace Transformation,
-          Systems of First Order Linear Equations,
-          Numerical Methods
-        \item [Theory of Analysis]
-          Properties of the Real Numbers,
-          Sequences and Series,
-          Topology of $\mathbb{R}$,
-          Limits and Cointinuity of Functions,
-          Derivatives,
-          Sequences and Series of Functions,
-          Riemann Integral
-        \item [Mathematical Analysis]
-          Abstract Vector Spaces,
-          Linear Transformations and Matrices,
-          Inner Product Spaces,
-          Spectral Theory,
-          Metric Space Topology,
-          Fr\'echet Differentiation,
-          Contraction Mappings,
-          Daniell-Lebesgue Integration,
-          Calculus on Manifolds,
-          Complex Analysis,
-          Spectral Calculus,
-          Iterative Methods for Linear Systems
-        \item [Algorithm Design and Optimization]
-          Measuring Algorithm Complexity,
-          Data Structures,
-          Combinatorial Optimization,
-          Probability,
-          Probabilistic Sampling and Estimation,
-          Random Algorithms,
-          Harmonic Analysis,
-          Polynomial Approximation and Interpoloation,
-          Unconstrained Optimization,
-          Linear Optimization,
-          Nonlinear Constrained Optimization,
-          Convex Analysis and Optimization,
-          Dynamic Optimization,
-          Stochastic Dynamic Optimization
-        \item [Modeling with Uncertainty and Data]
-          Markov Chains,
-          Classical Inference,
-          Hypothesis Testing,
-          Regression and Classification,
-          Bayesian Analysis,
-          Estimation in State Space Models,
-          Machine Learning,
-          Unsupervised Methods,
-          Graphical and Latent Variable Models,
-          Kernel Methods,
-          Tree-Based Methods
-        \item [Modeling with Dynamics and Control]
-
-      \end{description}
-}
+\project{Android App -- Family History Map}{Summer 2018}
+\begin{compactItemize}
+  \item Wrote both the client and server in Java.
+  \item Displayed family history data with a Google MapFragment.
+  \item Implemented activities for log-in, map interaction, life event details, and app settings.
+  \item Wrote the SQL commands that the server would use to store and retrieve user data.
+\end{compactItemize}
 
 \begin{comment}
+  TODO:
+  -Macro command for courses list.
+  -Push macros into other file (lsResume.sty)
+  -Projects:
+    >
 
-%Contact Info List
-\begin{description}
-  \item [LinkedIn] \href{https://www.linkedin.com/in/logan-schelly/}{linkedin.com/in/logan-schelly/}
-  \item [GitHub] \href{https://github.com/Logan-Schelly}{github.com/Logan-Schelly}
-\end{description}
-
-%Skills
-\section*{Technical Skills}
-  \subsection*{Computer Science}
-    \subsubsection*{Programming Languages and Libraries} 
-      \begin{description}
-        \item [Python]
-          \begin{itemize}
-            \item NumPy
-            \item SciPy
-            \item SymPy
-            \item MatplotLib
-            \item Pandas
-            \item scikit-learn
-            \item pytest
-          \end{itemize}
-        \item [JavaScript]
-          \begin{itemize}
-            \item Mocha
-            \item Chai
-            \item JSON
-          \end{itemize}
-        \item [C]
-          \begin{itemize}
-            \item unistd.h % fork() execve()
-            \item signal.h % signal handlers for SIGINT, SIGSTP, etc
-            \item pthread.h % pthread_create() pthread_join()...
-            \item sys/socket.h
-            \item omp.h (OpenMP)
-            \item regex.h
-          \end{itemize}
-        \item [Java]
-          \begin{itemize}
-            \item android
-            \item java.sql
-            \item com.google.gson
-            \item com.sun.net.httpserver
-            \item JUnit
-          \end{itemize}
-        \item [C++]
-        \item [SQL]
-          \begin{itemize}
-            \item java.sql
-            \item sqlite3 (python)
-          \end{itemize}
-        \item [Assembly for TI MSP430 microcontroller]
-      \end{description}
-    \subsubsection*{Markup Languages}
-      \begin{description}
-        \item [\LaTeX]
-        \item [HTML]
-      \end{description}
-  \subsection*{Mathematics}
-    
-\section*{Education}
-  %This probably should just be straight up removed.
-  \subsection*{High School Diploma}
-    \begin{itemize}
-      \item Graduated June 2011
-      \item Attended Hemet High School
-      \item Valedictorian of 500+ students.
-      \item 4.31 GPA (out of 5.0).
-    \end{itemize}
-  \subsection*{Bachelor of Science}
-    \begin{itemize}
-      \item Attended Brightam Young University (BYU)
-      \item Majored in Mathematics -- Applied and Computational Mathematics Emphasis (ACME)
-      \item Computer Science Minor
-      \item Recognized for outstanding performance in Mathematics in 2020 and 2018.
-      \item 3.17 GPA
-    \end{itemize}
-      \end{description}
-
-\section*{
-  %Relevant % <- Remove the percent before Relevant to really parse back 
-  Work Experience
-}
-  \subsection*{K\&M Strategic Management}
-    \begin{itemize}
-      \item Summer 2011 and May 2012 to January 2013.
-    \end{itemize}
-  \subsection*{Idyllwild Garage}
-    \begin{itemize}
-      \item Summer 2011 and May 2012 to January 2013.
-    \end{itemize}
-  \subsection*{Private Tutoring}
-    \begin{itemize}
-      \item Private tutoring began September 2012
-      \item Natalie Dunn
-      \item Scheridan Vorwaller
-      \item Jared Cripe
-      \item Billy and Jackie Clark
-      \item Kenny Valdez
-      \item Ansah Antwi
-    \end{itemize}
-  \subsection*{Hemet High School}
-    \begin{itemize}
-      \item AVID tutor
-      \item October 2013 through April 2014
-      \item AVID (Advancement Via Individual Determination) is a global nonprofit organization dedicated to closing the achievement gap
-        by preparing all students for college and other postsecondary opportunities.
-        AVID requires students to form study groups.
-        My job was to mentor and tutor these study groups.
-        I worked with high school freshmen, sophomores, and juniors.
-    \end{itemize}
-  \subsection*{Jiffy Lube}
-    \begin{itemize}
-      \item May 2015 -- September 2015
-      \item May 2016 -- August 2016
-    \end{itemize}
-  \subsection*{BYU Math Lab}
-    \begin{itemize}
-      \item September 2014 to April 2020.
-      \item Began as a tutor for Calc 1 and Calc 2.
-      \item A year later, became a tutor for Linear Algebra, Multivariable Calculus, Differential Equations, and Introduction to Proofs.
-      \item Became head upper division tutor in May 2017.
-    \end{itemize}
-\section*{Projects}
-  \subsection*{FamilyMap Android App}
-  \subsection*{Inverted Pendulum Control}
-  \subsection*{Math Lab Student Sign Up Analysis}
-  \subsection*{Graph-Based Image Segmentation}
+      \subsection*{Graph-Based Image Segmentation}
   \subsection*{SVD Image Compression}
   \subsection*{Facial Recognition with Eigenfaces}
   \subsection*{Applications of PageRank Algorithm}
@@ -410,10 +440,6 @@ I worked with high school freshmen, sophomores, and juniors.
   \subsection*{Breadth First Search and Six Degrees of Kevin Bacon}
   \subsection*{Random Speech Generation with Markov Chains}
   \subsection*{Simplex Method}
-  \subsection*{}
-  \subsection*{Tiny Shell}
-  \subsection*{HTTP Proxy}
-  \subsection*{OpenMP with Mandlebrot Set}
 \end{comment}
-\coverletter{}
+
 \end{document}
