@@ -30,19 +30,20 @@
 
 %Technical Skill Listings
 \newcommand{\technicalSkill}[3]{
-  \makebox[20ex][l]{#1 \lineFill} 
-  #2 \lineFill #3
+  \makebox[15ex][l]{#1 \hfill} 
+  \makebox[\widthof{Proficient, but rusty}+2ex][l]{#2}
+  #3
 }
 \newenvironment{technicalSkillWithSubskills}[3]{
-  \newcommand{\subskill}[1]{\item ##1}
+  \newcommand{\subskill}[1]{} %Don't put subskills -- this is the simple version
   \technicalSkill{#1}{#2}{#3}
-  \smallskip
-  \begin{multicols}{4}
-  \begin{itemize}[parsep=0ex, partopsep=0ex, topsep=-.7ex, itemsep=-.5ex]
+  %\smallskip
+  %\begin{multicols}{4}
+  %\begin{itemize}[parsep=0ex, partopsep=0ex, topsep=-.7ex, itemsep=-.5ex]
   }{
-  \end{itemize}
-  \end{multicols}
-  \medskip
+  %\end{itemize}
+  %\end{multicols}
+  %\medskip
 }
 
 %Job info Listings
@@ -81,14 +82,14 @@
 $\bullet$ %make a separator commmand.                        |-> Make an essential contact info command.
 idyllogan@verizon.net %Make an \email command.              /
 \end{center}
-
+\begin{comment}
 \textbf{Objective}
 \smallskip
 \hrule
 I am a recent graduate.
 My ultimate career goal would be to work on a project like Intel's Math Kernel Library.
 For the time being I am looking for an entry-level job in software, data, or (if possible) high performance computing.
-
+\end{comment}
 \textbf{Education}
 \smallskip
 \hrule
@@ -101,7 +102,7 @@ For the time being I am looking for an entry-level job in software, data, or (if
   \item Recognized for outstanding performance in Mathematics in 2020 and 2018
 \end{itemize}
 
-\begin{addmargin}{2ex}
+\begin{comment}{2ex}
 
 \textbf{Course Work and Topics}
   \begin{itemize}[labelindent=2ex, parsep=0ex, partopsep=0ex, topsep=-.7ex]
@@ -233,7 +234,7 @@ For the time being I am looking for an entry-level job in software, data, or (if
         \end{itemize}
       \end{multicols}
   \end{itemize}
-\end{addmargin}
+\end{comment}
 
 
 \textbf{Skills}
@@ -312,15 +313,15 @@ For the time being I am looking for an entry-level job in software, data, or (if
 
 \jobInfo{Head Upper Division Tutor}{Provo, UT}{BYU Math Lab}{Sep 2014 -- April 2020}
 \begin{compactItemize}
-  \item Helped students on a first-come first-served basis.
+  %\item Helped students on a first-come first-served basis.
   \item Tutored Linear Algebra, Multivariable Calculus, Differential Equations, and Mathematical Proof classes.
   \item Conducted weekly meetings to help our team of 10-20 upper division tutors prepare for that week's concepts.
   \item Coordinated exam reviews, and often taught them.  10 to 200 students attended, depending on enrollment and subject.
-  \item Overhauled the tutor handbook.
-  \item Expanded the tutor application test to include a Mathematical Proof section.
+ % \item Overhauled the tutor handbook.
+ % \item Expanded the tutor application test to include a Mathematical Proof section.
 \end{compactItemize}
 \medskip
-
+\begin{comment}
 \jobInfo{Applied Math TA}{Provo, UT}{BYU Math Department}{Winter 2019}
 \begin{compactItemize}
   \item 3 times a week I held office hours to help ACME juniors with their Optimization and Mathematical Analysis homework.
@@ -360,7 +361,7 @@ For the time being I am looking for an entry-level job in software, data, or (if
   \item Repainted fences, parking lines, and breakrooms.
 \end{compactItemize}
 \medskip
-
+\end{comment}
 \textbf{Projects %Of Interest
 }
 \smallskip
@@ -391,7 +392,7 @@ For the time being I am looking for an entry-level job in software, data, or (if
   \item Written C with \texttt{unistd.h}, \texttt{sys/socket.h}, \texttt{arpa/inet.h}, and \texttt{netinet/in.h}.
 \end{compactItemize}
 \medskip
-
+\begin{comment}
 \project{OpenMP with Mandelbrot Set}{Winter 2020}
 \begin{compactItemize}
   \item Parallelized the \href{https://gist.github.com/andrejbauer/7919569}{Mandelbrot visualization code} posted on github by Andrej Bauer.
@@ -404,7 +405,7 @@ For the time being I am looking for an entry-level job in software, data, or (if
   \item Used C with \texttt{unistd.h} and \texttt{signal.h}.
 \end{compactItemize}
 \medskip
-
+\end{comment}
 \project{Inverted Pendulum Control}{Winter 2019}
 \begin{compactItemize}
   \item Modified the code from the CartPole-v1 environment of OpenAI's gym library.
