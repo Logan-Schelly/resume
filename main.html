@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Logan Schelly's Resume</title>
+  </head>
+
+  <body>
+    <!--Since this is a resume, the main matter is about a person.-->
+    <main vocab="http://schema.org" typeof="Person">
+      
+      <!--Header has name and contact info, so it doubles as author's contact info.-->
+      <header>
+      <address>
+        <h1 id="name">
+          <span property="givenName">
+            Logan
+          </span>
+          <span property="familyName">
+            Schelly
+          </span>
+        </h1>
+        <ul id="contactInfoList">
+          <li>
+            <span property="telephone">
+            <a href=tel:1-951-692-8802>1-951-692-8802</a>
+            </span>
+          </li>
+          <li>
+            <span property="email">
+            <a href="mailto:idyllogan@verizon.net">idyllogan@verizon.net</a>
+            </span>
+          </li>
+        </ul>
+      </address>
+      </header>
+      
+      <hr>
+      
+      <section class="resumeSection" id="objective">
+        <h2>Objective</h2>
+        <p id="objectiveStatement">
+        I am a recent college graduate.
+        My professional experience has largely been tutoring, especially mathematics.
+        I enjoy the structure and precision of mathematics, but for the time being I am trying to pivot away from math education.
+        I want to <span property="seeks" typeof="Demand">experience first-hand how professionals use mathematics</span>.
+        My ultimate career goal would be to <span property="makesOffer" typeof="Offer">work on a mathematics software project like Intel’s Math Kernel Library</span>.
+        For the time being I am looking for an <span property="makesOffer" typeof="Offer">entry-level job in software, data, or (if possible) high performance computing</span>.
+        </p>
+      </section>
+      
+      <hr>
+
+      <section class="resumeSection" id="educationSection">
+        <h2>Education</h2>
+
+        <section class="educationSubSection" id="BYUEducationSubSection">
+          <div class="degreeDetails" id="BYUDegreeDetails" property="hasCredential" typeof="EducationalOccupationalCertification">
+          <!--This div describes a degree not a person.-->
+            <h3 class="degreeName" id="byuDegreeName">
+              <span property="educationalLevel">
+              <span property="credentialCategory">
+                Bachelor of Science
+              </span>
+              </span>
+              in 
+              <span property="competencyRequired">
+                Mathematics
+              </span>
+            </h3>
+
+            <div class="educationalOrganization" property="recognizedBy" typeof="CollegeOrUniversity">
+              <span property="name">
+              <abbr title="Brigham Young University">
+                BYU
+              </abbr>
+              </span>
+              <span class="educationalOrganizationLocation" property="spatial" typeof="City">
+                <span property="name">Provo</span>,
+                <span property="containedInPlace" typeof="State">
+                  <span property="name"><abbr title="Utah">UT</abbr></span>
+                </span>
+              </span>
+            </div>
+            
+            <div property="temporal" class="educationCompletionDate">
+              <time datetime="2020-04-23">April 2020</time>
+            </div>
+            <div class="GPADiv" typeof="Rating">
+              <span property="name">
+              <abbr title="Grade Point Average">GPA</abbr>:
+              </span>
+              <span class="GPA" property="ratingValue">3.17</span>
+              out of
+              <span class="GPAOutOf" property="bestRating">4.0</span>
+            </div>
+          </div>
+          <!--Back to describing a person-->
+
+          <ul class="educationSectionDetails">
+            <li>
+              <dfn id="ACMEDefinition">
+                <span property="knowsAbout">Applied and Computational Mathematics</span>
+                Emphasis (<abbr title="Applied and Computational Mathematics">ACME</abbr>)
+              </dfn>
+            </li>
+            <li>
+              <span property="knowsAbout">Computer Science</span> Minor
+            </li>
+            <li>
+              Recognized for <span property="award">outstanding performance in Mathematics</span> in Winter 2018 and 2020.
+            </li>
+          </ul>
+          
+          <section class="courseWorkSubSubSection" id="BYUCourses">
+            <h4>Course Work</h3>
+            <small class="clickExpandNotice">Click on a discipline for courses.</small>
+            <details>
+              <summary>
+              <h5>
+              Mathematics
+              </h5>
+              </summary>
+              <ul class="courseList">
+                <li>
+                  <div class="course">
+                    <div class="courseName">
+                      Calculus 2
+                    </div>
+                    <div>
+                      <details>
+                        <summary>
+                          Details.
+                        </summary>
+                        <div>
+                          <span class="courseTopicsHeader">Topics</span>
+                          <ul class="courseTopicsList">
+                            <li class="courseTopic">
+                              Fundamental Theorem of Calculus
+                            </li>
+                            <li class="courseTopic">
+                              U-Substitution
+                            </li>
+                            <li class="courseTopic">
+                              Integration to find Area or Volume
+                            </li>
+                            <li class="courseTopic">
+                              Integration to find Work
+                            </li>
+                            <li class="courseTopic">
+                              Integration by Parts
+                            </li>
+                            <li class="courseTopic">
+                              Trigonometric Integrals
+                            </li>
+                            <li class="courseTopic">
+                              Trigonometric Substitution
+                            </li>
+                            <li class="courseTopic">
+                              Approximate Integration
+                            </li>
+                          </ul>
+                      </details>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  Fundamentals of Mathematics
+                </li>
+                <li>
+                  Elementary Linear Algebra
+                </li>
+                <li>
+                  Calculus of Several Variables
+                </li>
+                <li>
+                  Ordinary Differential Equations
+                </li>
+                <li>
+                  Theory of Analysis 1
+                </li>
+                <li>
+                  Algorithm Design and Optimization
+                </li>
+                <li>
+                  Mathematical Analysis
+                </li>
+                <li>
+                  Modeling with Uncertainty and Data
+                </li>
+                <li>
+                  Modeling with Dynamics and Control
+                </li>
+              </ul>
+            </details>
+            <details>
+              <summary>
+              <h5>
+                Computer Science
+              </h5>
+              </summary>
+              <ul class="courseList">
+                <li>
+                  Introduction to Computer Programming
+                </li>
+                <li>
+                  Computer Systems
+                </li>
+                <li>
+                  Data Structures
+                </li>
+                <li>
+                  Discrete Structure
+                </li>
+                <li>
+                  Advanced Programming Concepts
+                </li>
+                <li>
+                  Introduction to Computational Theory
+                </li>
+                <li>
+                  Systems Programming
+                </li>
+              </ul>
+            </details>
+            <details>
+              <summary>
+                <h5>
+                  Miscellaneous / General
+                </h5>
+              </summary>
+              <ul class="courseList">
+                <li>
+                  Principles of Chemistry
+                </li>
+                <li>
+                  Science of Biology
+                </li>
+                <li>
+                  Principles of Physics
+                </li>
+                <li>
+                  Introduction to Waves, Optics, and Thermodynamics
+                </li>
+              </ul>
+            </details>
+          </section>
+
+        </section>
+
+        <section class="educationSection" id="highSchoolEducation">
+          <div class="degreeDetails" id="HighSchoolDiplomaDetails" property="hasCredential" typeof="EducationalOccupationalCertification">
+          <!--This div describes a degree not a person.-->
+            <h3 class="degreeName" id="HighSchoolDiplomaName">
+              <span property="educationalLevel">
+              <span property="credentialCategory">
+                High School Diploma
+              </span>
+              </span>
+            </h3>
+
+            <div class="educationalOrganization" property="recognizedBy" typeof="HighSchool">
+              <span property="name">
+                Hemet High School
+              </span>
+              <span class="educationalOrganizationLocation" property="spatial" typeof="City">
+                <span property="name">Hemet</span>,
+                <span property="containedInPlace" typeof="State">
+                  <span property="name"><abbr title="California">CA</abbr></span>
+                </span>
+              </span>
+            </div>
+            
+            <div property="temporal" class="educationCompletionDate">
+              <time datetime="2020-04-23">June 2011</time>
+            </div>
+            <div class="GPADiv" typeof="Rating">
+              <span property="name">
+              <abbr title="Grade Point Average">GPA</abbr>:
+              </span>
+              <span class="GPA" property="ratingValue">3.97</span>
+              out of
+              <span class="GPAOutOf" property="bestRating">4.0</span>
+            </div>
+          </div>
+          <!--Back to describing a person-->
+
+        </section>
+      </section>
+
+      <hr>
+
+      <section class="resumeSection" id="skillsSection">
+        <h2>Skills</h2>
+      </section>
+
+      <hr>
+
+      <section class="resumeSection" id="workExperienceSection">
+        <h2>Work Experience</h2>
+      </section>
+
+      <hr>
+
+      <section class="resumeSection" id="projectsSection">
+        <h2>Projects</h2>
+      </section>
+
+      <hr>
+
+      <footnote class="internetProfiles" id="personalWebpagesSection">
+       <h5>Personal Webpages</h5>
+        <ul>
+          <li>
+           GitHub
+          </li>
+          <li>
+            BitBucket
+          </li>
+          <li>
+            LinkedIn
+          </li>
+          <!--li>
+            Personal Website
+          </li-->
+        </ul>
+      </footnote>
+    </main>
+  </body>
+</html>
