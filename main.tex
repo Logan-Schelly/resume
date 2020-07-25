@@ -96,11 +96,12 @@ For the time being I am looking for an entry-level job in software, data, or (if
 
 \degree{Bachelors of Science in Mathematics}{April 2020}{Brigham Young University}{GPA: 3.17 out of 4.0}
 %
-\begin{itemize}[labelindent=2ex, itemsep=0ex, parsep=0ex, partopsep=0ex, topsep= -.7ex]%Need to undo the parskip from usual start
+\vspace{-1ex}
+\begin{compactItemize}
   \item Applied and Computational Mathematics Emphasis (ACME)
   \item Computer Science Minor
   \item Recognized for outstanding performance in Mathematics in 2020 and 2018
-\end{itemize}
+\end{compactItemize}
 
 \begin{comment}{2ex}
 
@@ -241,72 +242,27 @@ For the time being I am looking for an entry-level job in software, data, or (if
 \smallskip
 \hrule
 \textbf{Programming Languages}
-\begin{itemize}[ parsep=0ex, partopsep=0ex, topsep=-.7ex, itemsep=0ex]
-  \item
-  \begin{technicalSkillWithSubskills}
-    {Python}
-    {Very Comfortable}
-    {used in 8 lab classes and 4 lecture classes}
-    \subskill{NumPy}
-    \subskill{Scipy}
-    \subskill{Matplotlib}
-    \subskill{SymPy}
-    \subskill{Pandas}
-    \subskill{scikit-learn}
-    \subskill{pytest}
-    \subskill{Selenium}
-    \subskill{Beautiful Soup}
-    \subskill{sqlite3}
-  \end{technicalSkillWithSubskills}
-  \item \technicalSkill{C++}{Proficient, but rusty}{used in 3 lecture classes}
-  \item
-  \begin{technicalSkillWithSubskills}
-    {C}
-    {Proficient}
-    {used in 2 lecture classes}
-    \subskill{\texttt{unistd.h}} % fork() execve()
-    \subskill{\texttt{signal.h}}  % signal handlers for SIGINT, SIGSTP, etc
-    \subskill{\texttt{pthread.h}} % pthread_create() pthread_join()...
-    \subskill{\texttt{sys/socket.h}}
-    \subskill{\texttt{omp.h} (OpenMP)}
-    \subskill{\texttt{regex.h}}
-  \end{technicalSkillWithSubskills}
-  \item
-  \begin{technicalSkillWithSubskills}
-    {Java}
-    {Proficient, but rusty}
-    {used extensively in 1 lecture class}
-    \subskill{GSON}
-    \subskill{\texttt{java.sql}}
-    \subskill{JUnit}
-    \subskill{Android}
-  \end{technicalSkillWithSubskills}
-  \item
-  \begin{technicalSkillWithSubskills}
-    {JavaScript}
-    {Beginner}
-    {self taught at \href{https://javascript.info}{javascript.info}, and listed as a \href{https://javascript.info/about}{contributor}}
-    \subskill{JSON}
-    \subskill{Mocha}
-    \subskill{Chai}
-  \end{technicalSkillWithSubskills}
-
-\end{itemize}
+\begin{multicols}{3}
+\begin{compactItemize}
+  \item Python
+  \item C
+  \item C++
+  \item Java
+  \item JavaScript
+\end{compactItemize}
+\end{multicols}
 
 \textbf{Other Tools}
-\begin{multicols}{2}
+\begin{multicols}{3}
   \begin{compactItemize}
-    \item \LaTeX -- Proficient
-    \item Spreadsheets -- Proficient
-    \item Git -- Intermediate
-    \item HTML -- Beginner
+    \item \LaTeX
+    \item Spreadsheets
+    \item Git
+    \item HTML
+    \item SQL
   \end{compactItemize}
 \end{multicols}
 
-\textbf{Soft Skills}
-  \begin{center}
-  Tutoring $\bullet$ Attention to Detail $\bullet$ Troubleshooting $\bullet$ Public Speaking $\bullet$ Leadership $\bullet$ Project Coordination
-  \end{center}
 
 \textbf{Work Experience}
 \smallskip
@@ -314,12 +270,14 @@ For the time being I am looking for an entry-level job in software, data, or (if
 
 \jobInfo{Head Upper Division Tutor}{Provo, UT}{BYU Math Lab}{Sep 2014 -- April 2020}
 \begin{compactItemize}
-  %\item Helped students on a first-come first-served basis.
-  \item Tutored Linear Algebra, Multivariable Calculus, Differential Equations, and Mathematical Proof classes.
+  \item Provided exceptional service by connecting and building relationships with students in each one-on-one interaction.
+  \item Continually improved my skills -- tutored for entry-level Calculus on entry; tutored for all 6 upper division courses within 2 years.
   \item Conducted weekly meetings to help our team of 10-20 upper division tutors prepare for that week's concepts.
   \item Coordinated exam reviews, and often taught them.  10 to 200 students attended, depending on enrollment and subject.
- % \item Overhauled the tutor handbook.
- % \item Expanded the tutor application test to include a Mathematical Proof section.
+  \item Switched from assigning reviews week-to-week to making all assignments at the beginning of the semester.
+        This dramatically improved both the number of tutors teaching reviews, and the number of tutors volunteering for reviews.
+  \item Completely overhauled the tutor handbook.
+  \item Expanded the tutor application test to include a Mathematical Proof section.
 \end{compactItemize}
 \medskip
 \begin{comment}
@@ -368,16 +326,16 @@ For the time being I am looking for an entry-level job in software, data, or (if
 \smallskip
 \hrule
 
-\project{Math Lab Student Sign Up Analysis}{Fall 2019 -- Winter 2020}
+\project{Math Lab Student Sign Up Analysis}{Nov 2019 -- April 2020}
 \begin{compactItemize}
   \item Consolidated data spread across 60+ Excel files.
-  \item Used Pandas to analyze the almost 900,000+ instances of students signing up for tutor help.
+  \item Analyzed the almost 900,000+ instances of students signing up for tutor help with Pandas, matplotlib, and sklearn.
   \item Identified busiest times of the week, and the topics students most often came in for help with.
   \item Advised scheduling more tutors in the mornings based on my findings.
 \end{compactItemize}
 \medskip
 
-\project{HTTP Proxy}{Winter 2020}
+\project{HTTP Proxy}{April 2020}
 \begin{compactItemize}
   \item C program that relayed user requests to end server, and relayed server responses to user.
   \item Used \texttt{regex.h} to verify that user requests met HTTP formatting requirements.
@@ -385,7 +343,7 @@ For the time being I am looking for an entry-level job in software, data, or (if
 \end{compactItemize}
 \medskip
 
-\project{DNS Stub Resolver}{Winter 2020}
+\project{DNS Stub Resolver}{March 2020}
 \begin{compactItemize}
   \item Program interfaced with DNS servers to look up IP addresses associated with a web domain name.
         For example, it would figure out that the domain name www.example.com is associated with IP address 93.184.216.34.
@@ -394,20 +352,20 @@ For the time being I am looking for an entry-level job in software, data, or (if
 \end{compactItemize}
 \medskip
 \begin{comment}
-\project{OpenMP with Mandelbrot Set}{Winter 2020}
+\project{OpenMP with Mandelbrot Set}{March 2020}
 \begin{compactItemize}
   \item Parallelized the \href{https://gist.github.com/andrejbauer/7919569}{Mandelbrot visualization code} posted on github by Andrej Bauer.
 \end{compactItemize}
 \medskip
 
-\project{Tiny Shell}{Winter 2020}
+\project{Tiny Shell}{February 2020}
 \begin{compactItemize}
   \item Wrote a simple shell that could handle process creation, I/O redirection and pipelines, and process control.
   \item Used C with \texttt{unistd.h} and \texttt{signal.h}.
 \end{compactItemize}
 \medskip
 \end{comment}
-\project{Inverted Pendulum Control}{Winter 2019}
+\project{Inverted Pendulum Control}{April 2019}
 \begin{compactItemize}
   \item Modified the Python code from the CartPole-v1 environment of OpenAI's gym library.
   \item Updated from Euler's method to Runge-Kutta.
@@ -415,7 +373,7 @@ For the time being I am looking for an entry-level job in software, data, or (if
 \end{compactItemize}
 \medskip
 
-\project{Android App -- Family History Map}{Summer 2018}
+\project{Android App -- Family History Map}{June 2018 -- Aug 2018}
 \begin{compactItemize}
   \item Wrote both the client and server in Java.
   \item Displayed family history data with a Google MapFragment.
